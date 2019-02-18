@@ -8,11 +8,9 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - hhvm
 
 install:
-  - curl -sS https://getcomposer.org/installer | php
-  - php composer.phar install
+  - composer install
 
 script:
   - ./vendor/bin/phpunit -c ./phpunit.xml --coverage-text
