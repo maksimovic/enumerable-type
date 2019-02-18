@@ -11,7 +11,8 @@ php:
   - hhvm
 
 install:
-  - composer install
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar install
 
 script:
   - ./vendor/bin/phpunit -c ./phpunit.xml --coverage-text
