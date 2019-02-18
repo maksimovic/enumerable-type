@@ -83,8 +83,7 @@ abstract class EnumerableType
         $classKey = crc32(get_called_class()) & 0xFFFFFF;
 
         if (!isset(self::$enumCache[$classKey])) {
-            $reflection = new \ReflectionClass(get_called_class());
-            $finalMethods = $reflection->getMethods(\ReflectionMethod::IS_FINAL);
+            $finalMethods = (new \ReflectionClass(get_called_class()))->getMethods(\ReflectionMethod::IS_FINAL);
 
             $return = [];
 
